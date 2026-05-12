@@ -44,3 +44,14 @@ for GPT-2-Medium (350M).
 We use [Megatron Core](https://github.com/NVIDIA/Megatron-LM) V0.12 and [MindSpeed-LLM](https://gitcode.com/Ascend/MindSpeed-LLM)
 
 The optimizers are implemented in `megatron/core/optimizer/optim.py`. The example training scripts are in `scripts/`.
+
+## Citation
+
+```bibtex
+@article{lu2026powerstep,
+  title   = {PowerStep: Memory-Efficient Adaptive Optimization via $\ell_p$-Norm Steepest Descent},
+  author  = {Lu, Yao and Fan, Dengdong and Zhang, Shixun and Tian, Yonghong},
+  journal = {arXiv preprint arXiv:2605.10335},
+  year    = {2026}
+}
+```
