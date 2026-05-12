@@ -13,7 +13,7 @@ Adam and AdamW maintain two optimizer states per parameter (first and second mom
 ![PowerStep Algorithm Overview](assets/algo.png)
 
 
-PowerStep matches AdamW's convergence in LLM pretraining even for large-scale models (e.g. Qwen3-235B-A22B)
+PowerStep matches AdamW's convergence in LLM pretraining even under int8 quantization for large-scale models (e.g. Qwen3-235B-A22B)
 
 ![Experiments](assets/exp.png)
 
