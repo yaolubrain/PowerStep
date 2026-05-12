@@ -43,4 +43,4 @@ for GPT-2-Medium (350M).
 
 We use [Megatron Core](https://github.com/NVIDIA/Megatron-LM) V0.12 and [MindSpeed-LLM](https://gitcode.com/Ascend/MindSpeed-LLM)
 
-The optimizers are implemented in `megatron/core/optimizer/optim.py`. The examples scripts are in `scripts/`.
+The optimizers are implemented in `megatron/core/optimizer/optim.py`. The example training scripts are in `scripts/`.
