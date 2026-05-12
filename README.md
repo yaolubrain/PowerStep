@@ -15,7 +15,7 @@ Adam and AdamW maintain two optimizer states per parameter (first and second mom
 
 PowerStep matches AdamW's convergence for large-scale models
 
-![Experiments](assets/sexp.png)
+![Experiments](assets/exp.png)
 
 ~8× memory reduction under `int8` quantization
 
