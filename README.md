@@ -1,6 +1,6 @@
 # PowerStep: Memory-Efficient Adaptive Optimization via $\ell_p$-Norm Steepest Descent
 
-Official implementation of **PowerStep**, a memory-efficient optimizer that achieves coordinate-wise adaptivity without storing second-moment statistics. PowerStep matches AdamW's convergence while halving optimizer memory, and enables stable training under aggressive `int8` quantization for ~8× memory reduction.
+Official implementation of **PowerStep**, a memory-efficient optimizer that achieves coordinate-wise adaptivity without storing second-moment statistics. PowerStep matches AdamW's convergence while halving optimizer memory, and enables stable training under aggressive int8 quantization for ~8× memory reduction.
 
 [paper](https://arxiv.org/abs/2605.10335)
 
