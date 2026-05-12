@@ -25,7 +25,7 @@ PowerStep matches AdamW's convergence in LLM pretraining even for large-scale mo
 
 ### GPT-2 Experiments 
 
-We use the [nanoGPT](https://github.com/karpathy/nanoGPT) codebase
+We use [nanoGPT](https://github.com/karpathy/nanoGPT) codebase
 ```
 cd nanoGPT
 ```
@@ -38,3 +38,9 @@ for GPT-2-Small (124M) or
 torchrun --standalone --nproc_per_node=8 train.py config/train_gpt2_medium.py
 ```
 for GPT-2-Medium (350M).
+
+### Qwen3 and DeepSeek-V2-Lite Experiments
+
+We use [Megatron Core](https://github.com/NVIDIA/Megatron-LM) V0.12 and [MindSpeed-LLM](https://gitcode.com/Ascend/MindSpeed-LLM)
+
+The optimizers are implemented in 'megatron/core/optimizer/optim.py'. The examples scripts are in 'scripts/'.
