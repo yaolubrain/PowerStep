@@ -1,21 +1,26 @@
-## GPT-2 Experiments
+# PowerStep: Memory-Efficient Adaptive Optimization via $\ell_p$-Norm Steepest Descent
 
-### Please refer to https://github.com/karpathy/nanoGPT/tree/master
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 
-cd nanoGPT
+Official implementation of **PowerStep**, a memory-efficient optimizer that achieves coordinate-wise adaptivity without storing second-moment statistics. PowerStep matches AdamW's convergence while halving optimizer memory, and enables stable training under aggressive `int8` quantization for ~8× memory reduction.
 
-### After downloading OpenWebText data in ./data/openwebtext, run the following command for example
+📄 **Paper:** [PowerStep: Memory-Efficient Adaptive Optimization via $\ell_p$-Norm Steepest Descent](https://arxiv.org/abs/2605.10335)
 
-torchrun --standalone --nproc_per_node=8 train.py config/train_gpt2.py
-torchrun --standalone --nproc_per_node=8 train.py config/train_gpt2_medium.py
+---
 
-### The optimizers are in optim.py, modify train.py to use and tune an optimizer
+## 📦 Overview
 
+Adam and AdamW maintain two optimizer states per parameter (first and second momentum), doubling the memory footprint compared to SGD. PowerStep eliminates the second-moment buffer entirely by applying a **signed power transform** directly to the momentum:
 
-## Qwen3 and DeepSeek-V2-Lite Experiments
+$$\mathbf{u}_t = \operatorname{sign}(\mathbf{m}_t) \odot |\mathbf{m}_t|^\beta$$
 
-### The code is based on Megatron-Core V0.12
-### The optimizers are implemented in megatron/core/optimizer
-### The scripts with training configurations are in ./scripts
-### We give example scripts for Qwen3-235B-A3B and Qwen3-32B
-### Please refer to https://github.com/NVIDIA/Megatron-LM and https://gitcode.com/Ascend/MindSpeed-LLM on how to run the scripts
+This simple modification provides coordinate-wise adaptivity with **half the memory**, and the single-buffer design naturally supports aggressive `int8` quantization.
+
+### Key Features
+
+- 🧠 **Memory Efficient:** ~2× reduction vs AdamW in `fp32`, ~8× reduction with `int8`
+- 🚀 **Matches AdamW:** Comparable convergence speed across 124M–235B parameter Transformers
+- 📉 **Stable under Quantization:** Unlike AdamW, PowerStep remains stable with aggressive `int8` compression
+- 🔧 **Simple Implementation:** Single momentum buffer, no second-moment statistics, no epsilon stabilization
+- 📐 **Theoretically Grounded:** Derived from $\ell_p$-norm steepest descent with optimal $O(1/\sqrt{T})$ convergence
