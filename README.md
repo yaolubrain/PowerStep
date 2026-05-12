@@ -29,7 +29,7 @@ We use the [nanoGPT](https://github.com/karpathy/nanoGPT) codebase
 ```
 cd nanoGPT
 ```
-Modify `train.py` and `optim.py` to change or config optimizer and run
+Modify `train.py` and `optim.py` to change or config the optimizer and run
 ```
 torchrun --standalone --nproc_per_node=8 train.py config/train_gpt2.py
 ```
