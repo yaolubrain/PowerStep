@@ -20,11 +20,7 @@ This simple modification provides coordinate-wise adaptivity with **half the mem
 
 ![Experiments](exp.png)
 
+### Memory Use
 
-### Key Features
+![Memory](memory.png)
 
-- 🧠 **Memory Efficient:** ~2× reduction vs AdamW in `fp32`, ~8× reduction with `int8`
-- 🚀 **Matches AdamW:** Comparable convergence speed across 124M–235B parameter Transformers
-- 📉 **Stable under Quantization:** Unlike AdamW, PowerStep remains stable with aggressive `int8` compression
-- 🔧 **Simple Implementation:** Single momentum buffer, no second-moment statistics, no epsilon stabilization
-- 📐 **Theoretically Grounded:** Derived from $\ell_p$-norm steepest descent with optimal $O(1/\sqrt{T})$ convergence
