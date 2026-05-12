@@ -8,10 +8,9 @@ Official implementation of **PowerStep**, a memory-efficient optimizer that achi
 
 ## Overview
 
-Adam and AdamW maintain two optimizer states per parameter (first and second momentum), doubling the memory footprint compared to SGD. PowerStep eliminates the second-moment buffer entirely by applying a **signed power transform** directly to the momentum. This simple modification provides coordinate-wise adaptivity with **half the memory**, and the single-buffer design naturally supports aggressive `int8` quantization.
+Adam and AdamW maintain two optimizer states per parameter (first and second momentum), doubling the memory footprint compared to SGD. PowerStep eliminates the second-moment buffer entirely by applying a **signed power transform** directly to the momentum. This simple modification provides coordinate-wise adaptivity with half the memory.
 
 ![PowerStep Algorithm Overview](assets/algo.png)
-
 
 PowerStep matches AdamW's convergence in LLM pretraining even under int8 quantization for large-scale models (e.g. Qwen3-235B-A22B)
 
