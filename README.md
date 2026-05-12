@@ -2,7 +2,7 @@
 
 Official implementation of **PowerStep**, a memory-efficient optimizer that achieves coordinate-wise adaptivity without storing second-moment statistics. PowerStep matches AdamW's convergence while halving optimizer memory, and enables stable training under aggressive `int8` quantization for ~8× memory reduction.
 
-[PowerStep: Memory-Efficient Adaptive Optimization via $\ell_p$-Norm Steepest Descent](https://arxiv.org/abs/2605.10335)
+[paper](https://arxiv.org/abs/2605.10335)
 
 ---
 
@@ -13,7 +13,7 @@ Adam and AdamW maintain two optimizer states per parameter (first and second mom
 ![PowerStep Algorithm Overview](assets/algo.png)
 
 
-PowerStep matches AdamW's convergence for large-scale models
+PowerStep matches AdamW's convergence in LLM pretraining even for large-scale models (e.g. Qwen3-235B-A22B)
 
 ![Experiments](assets/exp.png)
 
