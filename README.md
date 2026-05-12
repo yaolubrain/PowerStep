@@ -18,6 +18,7 @@ Adam and AdamW maintain two optimizer states per parameter (first and second mom
 
 This simple modification provides coordinate-wise adaptivity with **half the memory**, and the single-buffer design naturally supports aggressive `int8` quantization.
 
+![Experiments](exp.png)
 
 
 ### Key Features
