@@ -16,7 +16,7 @@ PowerStep matches AdamW's convergence in LLM pretraining even under int8 quantiz
 
 ![Experiments](assets/exp.png)
 
-~8× memory reduction under `int8` quantization
+~8× memory reduction under int8 quantization
 
 ![Memory](assets/memory.png)
 
