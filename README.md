@@ -23,7 +23,9 @@ PowerStep matches AdamW's convergence for large-scale models
 
 ## Code
 
-For GPT-2 experiments, we use the [nanoGPT](https://github.com/karpathy/nanoGPT) codebase
+### GPT-2 Experiments 
+
+We use the [nanoGPT](https://github.com/karpathy/nanoGPT) codebase
 ```
 cd nanoGPT
 ```
